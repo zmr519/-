@@ -1,0 +1,13 @@
+pyyaml
+python-docx
+docxtpl
+openpyxl
+sentence-transformers
+numpy
+requests
+jsonschema
+rapidfuzz
+qdrant-client
+tqdm
+fastapi
+uvicorn

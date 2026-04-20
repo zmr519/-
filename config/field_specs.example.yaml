@@ -1,0 +1,37 @@
+fields:
+  - name: 合同金额
+    description: 合同或报价单中的总金额
+    aliases: [总金额, 价税合计, 含税金额]
+    value_type: currency
+    required: true
+    regex_patterns:
+      - "(?:合同金额|总金额|价税合计)\\s*[：:]\\s*(?P<value>(?:人民币|¥|￥)?\\s*\\d[\\d,]*(?:\\.\\d+)?\\s*(?:元|万元|亿元)?)"
+    keyword_hints: [金额, 价税]
+    entity_hints: [currency]
+    prompt_hint: 优先提取带币种与单位的金额，并保留原始格式。
+    examples: ["100000.00元"]
+    schema:
+      type: ["string", "null"]
+
+  - name: 负责人
+    description: 项目或合同中的负责人姓名
+    aliases: [项目负责人, 经办人, 联系人]
+    value_type: person
+    keyword_hints: [负责人, 联系人]
+    entity_hints: [person]
+    prompt_hint: 优先抽取明确的人名，不要抽取部门名称。
+    examples: ["张三"]
+    schema:
+      type: ["string", "null"]
+
+  - name: 监测时间
+    description: 环境监测记录对应的采样时间
+    aliases: [时间, 采样时间]
+    value_type: datetime
+    required: true
+    keyword_hints: [监测时间]
+    entity_hints: [datetime]
+    prompt_hint: 保留原始时间格式，如 2025-11-25 09:00:00.0。
+    examples: ["2025-11-25 09:00:00.0"]
+    schema:
+      type: ["string", "null"]

@@ -1,0 +1,39 @@
+llm:
+  provider: deepseek
+  url: https://api.deepseek.com/v1/chat/completions
+  model: deepseek-reasoner
+  api_key: ""
+  api_key_env: DEEPSEEK_API_KEY
+  timeout_seconds: 90
+  max_retries: 3
+  temperature: 0.1
+  use_response_format: false
+  max_context_tokens: 30000
+  field_batch_size: 2
+
+embedding:
+  backend: sentence_transformers
+  model: sentencetransformers
+  device: auto
+  query_instruction: "Represent this sentence for searching relevant passages: "
+  use_fp16: false
+
+retrieval:
+  backend: qdrant
+  collection: doc_understanding_chunks
+  top_k: 5
+  record_top_k: 20
+  chunk_size: 600
+  chunk_overlap: 80
+  use_parent_context: true
+  child_chunk_size: 300
+  child_overlap: 50
+
+logging:
+  level: INFO
+
+cache:
+  dir: cache/qdrant
+
+output:
+  dir: outputs
