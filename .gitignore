@@ -2,3 +2,5 @@
 .idea/
 __pycache__/
 outputs/
+sentencetransformers/
+cache/

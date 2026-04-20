@@ -1,0 +1,22 @@
+.app-layout {
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+.app-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.app-sections {
+  padding: 16px 0 32px;
+}
+
+/* 全局去掉 body 默认 margin */
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+}
